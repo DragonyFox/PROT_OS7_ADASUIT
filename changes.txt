@@ -1,0 +1,9 @@
+using Arduino Nano Every because of RAM usage
+removed RGB inputs -> controlled over DIN, color stored for each individual coordinate
+There's only DIN, 5V and GRND on WS2812B's
+fillscreen low -> 0 (sets color value of RGB to 0 each)
+matrix.write -> matrix.show
+matrix.Color() -> removed, set variables for happycolor etc. to pass on when using drawBitmap()
+serial.begin(9600) -> matrix.begin()
+draw.Bitmap -> replace HIGH/LOW with desired color
+
