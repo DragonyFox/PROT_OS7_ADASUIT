@@ -29,6 +29,7 @@
 
 // array to store colors for blinkstate. When adding expressions, colors, also increase the colors[number]
 int colors[4] = {HAPPYCOLOR, SURPRISEDCOLOR, ANGRYCOLOR, VWVCOLOR};
+#define color colors[state]
 
 //#define VisorSensor
 #define BoopSensor
@@ -238,7 +239,6 @@ void loop() {
       if ((millis() - boopTime) < 6000) {
         blinkTime = millis();
         if (boopActive == 0) {
-          #define color colors[state]
           matrix.fillRect(EyeRight, 0, 16, 8, 0);
           matrix.fillRect(EyeLeft, 0, 16, 8, 0);
           matrix.drawBitmap(EyeLeft, 0, vwvL, 16, 8, color);
